@@ -1,14 +1,15 @@
 import { Header } from "./components/headers";
+import { Text } from "./components/text";
 import "./index.css";
 
 function InscriptionLookup() {
   return (
-    <form className="flex max-w-[480px] w-full flex-col items-center mx-auto py-12">
+    <form className="flex flex-col items-center">
       <Header>Ordinals Inscription Lookup</Header>
       <div className="self-stretch flex w-full flex-col items-stretch mt-8 mb-[566px] px-4">
-        <label className="text-center text-sm font-medium">
-          Owner Bitcoin Address:
-          <input className="bg-zinc-800 flex shrink-0 h-8 flex-col mt-3.5" />
+        <label>
+          <Text>Owner Bitcoin Address:</Text>
+          <input className="bg-zinc-800 h-8 mt-3.5 w-full text-white" />
         </label>
         <button className="text-white text-center text-sm font-medium whitespace-nowrap bg-indigo-600 justify-center items-center mt-2.5 px-16 py-4 rounded-xl">
           Look up
@@ -38,7 +39,9 @@ function InscriptionLookup() {
 export default function App() {
   return (
     <div className="bg-zinc-900">
-      <InscriptionLookup />
+      <div className="max-w-[480px] w-full mx-auto py-12 border border-white">
+        <InscriptionLookup />
+      </div>
     </div>
   );
 }
