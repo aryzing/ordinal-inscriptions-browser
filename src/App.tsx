@@ -1,35 +1,36 @@
-import { Header } from "./components/headers";
-import { Text } from "./components/text";
+import { Button } from "./components/Button";
+import { Header } from "./components/Headers";
+import { Result } from "./components/Result";
+import { Text } from "./components/Text";
 import "./index.css";
 
 function InscriptionLookup() {
   return (
     <form className="flex flex-col items-center">
-      <Header>Ordinals Inscription Lookup</Header>
-      <div className="self-stretch flex w-full flex-col items-stretch mt-8 mb-[566px] px-4">
+      <Header>Ordinal Inscription Lookup</Header>
+      <div className="self-stretch flex w-full flex-col items-stretch py-8 px-4">
         <label>
           <Text>Owner Bitcoin Address:</Text>
-          <input className="bg-zinc-800 h-8 mt-3.5 w-full text-white" />
+
+          <div className="pb-3.5" />
+
+          <input className="bg-zinc-800 h-8 w-full text-white px-1" />
         </label>
-        <button className="text-white text-center text-sm font-medium whitespace-nowrap bg-indigo-600 justify-center items-center mt-2.5 px-16 py-4 rounded-xl">
-          Look up
-        </button>
-        <div className="text-white text-center text-sm font-medium mt-5">
-          Results
-        </div>
-        <div className="flex justify-between gap-5 mt-11 pr-3.5 items-start">
-          <div className="flex flex-col items-stretch">
-            <div className="justify-center text-white text-sm font-medium leading-5">
-              Inscription 2f83b9b0
-            </div>
-            <div className="justify-center text-white text-sm font-medium leading-5 mt-12">
-              Inscription fe7cff70
-            </div>
-            <div className="justify-center text-white text-sm font-medium leading-5 mt-12">
-              Inscription b81979b1
-            </div>
-          </div>
-          <div className="self-stretch flex flex-col items-center"></div>
+
+        <div className="pb-2.5" />
+
+        <Button>Look up</Button>
+
+        <div className="pb-5" />
+
+        <Text>Results</Text>
+
+        <div className="pb-6" />
+
+        <div className="flex flex-col gap-y-4">
+          <Result id="12345678" />
+          <Result id="qwertyui" />
+          <Result id="asdfghjk" />
         </div>
       </div>
     </form>
