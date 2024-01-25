@@ -6,9 +6,9 @@ import "./index.css";
 
 function InscriptionLookup() {
   return (
-    <form className="flex flex-col items-center">
+    <div className="flex flex-col items-center">
       <Header>Ordinal Inscription Lookup</Header>
-      <div className="self-stretch flex w-full flex-col items-stretch py-8 px-4">
+      <form className="flex w-full flex-col py-8 px-4">
         <label>
           <Text>Owner Bitcoin Address:</Text>
 
@@ -32,8 +32,8 @@ function InscriptionLookup() {
           <Result id="qwertyui" />
           <Result id="asdfghjk" />
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 
