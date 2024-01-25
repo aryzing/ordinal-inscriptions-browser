@@ -11,15 +11,19 @@ npm run dev
 
 # Arch
 
-- Explicit spacing
-- Positioning with paddings, flex, and without margins
-
+- State management
+  - `useState`
+  - URL
+  - ReactQuery built-in cache
+  - React Hook Form
+- Network: ReactQuery
+- Layout
+  - Positioning with paddings, flex, and without margins
+- Components
+  - Separate layout from business logic
 - Styles
-
   - Tailwind
-
 - E2E testing: Playwright
-
 - Build
   - Typescript, ESlint, Prettier
     - Prettier w/ import sorting & tailwind class name sorting
