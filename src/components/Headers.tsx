@@ -3,7 +3,7 @@ export function Header(props: {
   className?: string;
 }) {
   return (
-    <header className={`text-white text-sm mt-2 ${props.className}`}>
+    <header className={`mt-2 text-sm text-white ${props.className}`}>
       {props.children}
     </header>
   );
