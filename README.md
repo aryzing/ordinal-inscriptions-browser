@@ -9,6 +9,22 @@ npm i
 npm run dev
 ```
 
+# Arch
+
+- Explicit spacing
+- Positioning with paddings, flex, and without margins
+
+- Styles
+
+  - Tailwind
+
+- E2E testing: Playwright
+
+- Build
+  - Typescript, ESlint, Prettier
+    - Prettier w/ import sorting & tailwind class name sorting
+  - Vite
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

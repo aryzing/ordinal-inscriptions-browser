@@ -8,13 +8,13 @@ function InscriptionLookup() {
   return (
     <div className="flex flex-col items-center">
       <Header>Ordinal Inscription Lookup</Header>
-      <form className="flex w-full flex-col py-8 px-4">
+      <form className="flex w-full flex-col px-4 py-8">
         <label>
           <Text>Owner Bitcoin Address:</Text>
 
           <div className="pb-3.5" />
 
-          <input className="bg-zinc-800 h-8 w-full text-white px-1" />
+          <input className="h-8 w-full bg-zinc-800 px-1 text-white" />
         </label>
 
         <div className="pb-2.5" />
@@ -27,7 +27,7 @@ function InscriptionLookup() {
 
         <div className="pb-6" />
 
-        <div className="flex flex-col gap-y-4">
+        <div className="flex flex-col gap-y-4 ">
           <Result id="12345678" />
           <Result id="qwertyui" />
           <Result id="asdfghjk" />
@@ -40,7 +40,7 @@ function InscriptionLookup() {
 export default function App() {
   return (
     <div className="bg-zinc-900">
-      <div className="max-w-[480px] w-full mx-auto py-12 border border-white">
+      <div className="mx-auto w-full max-w-[480px] border border-white py-12">
         <InscriptionLookup />
       </div>
     </div>
