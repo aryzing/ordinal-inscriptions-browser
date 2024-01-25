@@ -37,7 +37,7 @@ function InscriptionLookup() {
   console.log("Rendering");
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex max-h-full flex-col items-center">
       <Header>Ordinal Inscription Lookup</Header>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -61,15 +61,17 @@ function InscriptionLookup() {
 
       <div className="pb-5" />
 
-      <div className="flex w-full flex-col px-4">
+      <div className="flex min-h-0 w-full grow flex-col px-4">
         <Text>Results</Text>
 
         <div className="pb-6" />
 
-        <div className="flex min-h-0 grow flex-col gap-y-4 border border-red-500">
+        <div className="flex min-h-0 grow flex-col gap-y-4 overflow-scroll border border-red-500">
           {ordinalQuery.data?.results.map((utxo) =>
             utxo.inscriptions.map((inscription) => (
-              <Result key={inscription.id} id={inscription.id.slice(0, 8)} />
+              <div className="w-full shrink-0">
+                <Result key={inscription.id} id={inscription.id.slice(0, 8)} />
+              </div>
             )),
           )}
         </div>
@@ -84,8 +86,10 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="h-screen w-screen overflow-hidden bg-zinc-900">
-        <div className="mx-auto w-full max-w-[480px] border border-white py-12">
-          <InscriptionLookup />
+        <div className="flex max-h-full justify-center">
+          <div className="max-h-full w-full max-w-[480px] border border-white py-12">
+            <InscriptionLookup />
+          </div>
         </div>
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
