@@ -3,8 +3,10 @@ import {
   QueryClientProvider,
   useQuery,
 } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { useForm } from "react-hook-form";
 
+import { OrdinalUtxo, Paginated } from "./api/types";
 import { Button } from "./components/Button";
 import { Header } from "./components/Headers";
 import { Result } from "./components/Result";
@@ -16,7 +18,7 @@ function InscriptionLookup() {
     bitcoinAddress: string;
   }>();
 
-  const ordinalQuery = useQuery({
+  const ordinalQuery = useQuery<Paginated<OrdinalUtxo>>({
     queryKey: ["ordinals"],
     queryFn: async () => {
       const { bitcoinAddress } = getValues();
@@ -59,15 +61,17 @@ function InscriptionLookup() {
 
       <div className="pb-5" />
 
-      <div className="w-full px-4">
+      <div className="flex w-full flex-col px-4">
         <Text>Results</Text>
 
         <div className="pb-6" />
 
-        <div className="flex flex-col gap-y-4 ">
-          <Result id="12345678" />
-          <Result id="qwertyui" />
-          <Result id="asdfghjk" />
+        <div className="flex min-h-0 grow flex-col gap-y-4 border border-red-500">
+          {ordinalQuery.data?.results.map((utxo) =>
+            utxo.inscriptions.map((inscription) => (
+              <Result key={inscription.id} id={inscription.id.slice(0, 8)} />
+            )),
+          )}
         </div>
       </div>
     </div>
@@ -79,11 +83,12 @@ const queryClient = new QueryClient();
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="bg-zinc-900">
+      <div className="h-screen w-screen overflow-hidden bg-zinc-900">
         <div className="mx-auto w-full max-w-[480px] border border-white py-12">
           <InscriptionLookup />
         </div>
       </div>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
