@@ -34,10 +34,10 @@ function InscriptionLookup() {
     ordinalQuery.refetch();
   }
 
-  console.log("Rendering");
-
   return (
     <div className="flex max-h-full flex-col items-center">
+      <div className="pb-12" />
+
       <Header>Ordinal Inscription Lookup</Header>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -66,16 +66,18 @@ function InscriptionLookup() {
 
         <div className="pb-6" />
 
-        <div className="flex min-h-0 grow flex-col gap-y-4 overflow-scroll border border-red-500">
+        <div className="flex min-h-0 grow flex-col gap-y-4 overflow-y-scroll">
           {ordinalQuery.data?.results.map((utxo) =>
             utxo.inscriptions.map((inscription) => (
-              <div className="w-full shrink-0">
+              <div key={inscription.id}>
                 <Result key={inscription.id} id={inscription.id.slice(0, 8)} />
               </div>
             )),
           )}
         </div>
       </div>
+
+      <div className="pb-2" />
     </div>
   );
 }
@@ -87,7 +89,7 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <div className="h-screen w-screen overflow-hidden bg-zinc-900">
         <div className="flex max-h-full justify-center">
-          <div className="max-h-full w-full max-w-[480px] border border-white py-12">
+          <div className="max-h-full w-full max-w-[480px] border border-white">
             <InscriptionLookup />
           </div>
         </div>
