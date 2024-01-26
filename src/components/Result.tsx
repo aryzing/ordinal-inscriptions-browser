@@ -4,13 +4,17 @@ import { ChevronRight } from "../icons/ChevronRight";
 
 import { Text } from "./Text";
 
-export function Result(props: { id: string }) {
+interface Props {
+  bitcoinAddress: string;
+  inscriptionId: string;
+}
+export function Result({ bitcoinAddress, inscriptionId }: Props) {
   return (
     <Link
-      to={`/inscription/${props.id}`}
+      to={`/${bitcoinAddress}/${inscriptionId}`}
       className="flex h-12 w-full items-center justify-between px-2 hover:cursor-pointer hover:rounded-xl hover:bg-zinc-800"
     >
-      <Text>Inscription {props.id.slice(0, 8)}</Text>
+      <Text>Inscription {inscriptionId.slice(0, 8)}</Text>
       <ChevronRight />
     </Link>
   );
