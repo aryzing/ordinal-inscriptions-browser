@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes } from "react";
+import { twMerge } from "tailwind-merge";
 
 export function Button(
   props: ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -9,7 +10,10 @@ export function Button(
   const { className, children, ...rest } = props;
   return (
     <button
-      className={`items-center justify-center whitespace-nowrap rounded-xl bg-indigo-600 px-16 py-4 text-center text-sm font-medium text-white ${className}`}
+      className={twMerge(
+        "items-center justify-center whitespace-nowrap rounded-xl bg-indigo-600 px-16 py-4 text-center text-sm font-medium text-white disabled:bg-indigo-500",
+        className,
+      )}
       {...rest}
     >
       {children}
