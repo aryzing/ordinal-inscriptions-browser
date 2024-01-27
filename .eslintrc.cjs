@@ -25,7 +25,10 @@ module.exports = {
     ],
     "@typescript-eslint/no-unused-vars": [
       "error",
-      { varsIgnorePattern: "^_\\w*", vars: all },
+      { varsIgnorePattern: "^_\\w*", vars: "all" },
     ],
+  },
+  settings: {
+    react: { version: "detect" },
   },
 };

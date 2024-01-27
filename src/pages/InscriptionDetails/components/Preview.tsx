@@ -14,7 +14,7 @@ export function Preview({ contentType, blob }: Props) {
     if (contentType.startsWith("text/")) {
       blob.text().then(setText);
     }
-  });
+  }, [blob, contentType]);
 
   return switchContentType(contentType, {
     image: (

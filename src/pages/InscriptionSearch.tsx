@@ -77,7 +77,7 @@ export function InscriptionSearch() {
       setValue("bitcoinAddress", bitcoinAddress);
       trigger("bitcoinAddress");
     }
-  }, []);
+  }, [bitcoinAddress, ordinalsQuery.isPending, setFocus, setValue, trigger]);
 
   return (
     <div className="flex max-h-full flex-col items-center">
