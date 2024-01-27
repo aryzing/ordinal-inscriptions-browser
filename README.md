@@ -9,6 +9,16 @@ npm i
 npm run dev
 ```
 
+The app allows users to,
+
+- Provide a Bitcoin address to search for inscriptions
+- View a list of inscriptions owned by the address
+- View an inscription's details
+- Preview text and image inscriptions, with default fallback for other types
+- Use an infinite scroll to gradually load more inscriptions.
+
+Note: The app, developed using Tailwind CSS, uses the closest available colors and dimensions matching the designs.
+
 ## Tests
 
 Install Playwright's browsers & deps with,
