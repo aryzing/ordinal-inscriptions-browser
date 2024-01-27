@@ -31,7 +31,7 @@ export function InscriptionDetails() {
     <div className="flex h-full flex-col">
       <Header />
 
-      <div className="min-h-0 grow overflow-y-auto no-scrollbar">
+      <div className="min-h-0 grow overflow-y-auto overflow-x-hidden no-scrollbar">
         <div className="flex flex-col gap-y-6">
           <Preview contentType={contentType} blob={blob} />
 
