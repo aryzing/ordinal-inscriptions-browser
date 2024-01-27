@@ -67,7 +67,6 @@ export function InscriptionSearch() {
   });
 
   function onSubmit() {
-    // setBitcoinAddress(getValues().bitcoinAddress);
     submit(getValues(), { method: "post" });
   }
 
