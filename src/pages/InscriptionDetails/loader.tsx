@@ -1,5 +1,5 @@
 import { QueryClient } from "@tanstack/react-query";
-import { Params, redirect } from "react-router-dom";
+import { Params, defer, redirect } from "react-router-dom";
 
 import { inscriptionContentQuery, inscriptionMetadataQuery } from "./queries";
 
@@ -15,11 +15,13 @@ export function loader(queryClient: QueryClient) {
       return redirect("/");
     }
 
-    return Promise.all([
-      queryClient.ensureQueryData(
+    return defer({
+      metadata: queryClient.ensureQueryData(
         inscriptionMetadataQuery({ bitcoinAddress, inscriptionId }),
       ),
-      queryClient.ensureQueryData(inscriptionContentQuery(inscriptionId)),
-    ]);
+      content: queryClient.ensureQueryData(
+        inscriptionContentQuery(inscriptionId),
+      ),
+    });
   };
 }
