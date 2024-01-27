@@ -40,8 +40,8 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="h-screen w-screen overflow-hidden bg-zinc-900 sm:py-8">
-        <div className="flex max-h-full justify-center">
-          <div className="max-h-full w-full max-w-[480px] sm:border sm:border-white">
+        <div className="flex max-h-full justify-center sm:h-full">
+          <div className="max-h-full w-full max-w-[480px] sm:h-full sm:border sm:border-white">
             <RouterProvider router={router} />
           </div>
         </div>
