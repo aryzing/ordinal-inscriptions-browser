@@ -12,7 +12,7 @@ export function Result({ bitcoinAddress, inscriptionId }: Props) {
   return (
     <Link
       to={`/${bitcoinAddress}/${inscriptionId}`}
-      className="flex h-12 w-full items-center justify-between px-2 hover:cursor-pointer hover:rounded-xl hover:bg-zinc-800"
+      className="flex h-12 w-full items-center justify-between rounded-xl px-2 hover:cursor-pointer hover:bg-zinc-800"
     >
       <Text>Inscription {inscriptionId.slice(0, 8)}</Text>
       <ChevronRight />
