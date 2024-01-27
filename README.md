@@ -11,10 +11,18 @@ npm run dev
 
 ## Tests
 
-To run the tests,
+Install Playwright's browsers & deps with,
+
+```bash
+npx playwright install
+npx playwright install-deps
+```
+
+Run the tests with,
 
 ```bash
 # E2E tests
+npx playwright test
 
 # Unit tests
 
