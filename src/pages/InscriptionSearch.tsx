@@ -72,7 +72,8 @@ export function InscriptionSearch() {
   }
 
   useEffect(() => {
-    setFocus("bitcoinAddress");
+    if (ordinalsQuery.isPending) setFocus("bitcoinAddress");
+
     if (bitcoinAddress) {
       setValue("bitcoinAddress", bitcoinAddress);
       trigger("bitcoinAddress");
@@ -85,7 +86,7 @@ export function InscriptionSearch() {
         <Text>Ordinal Inscription Lookup</Text>
       </Header>
 
-      <div className="pb-8" />
+      <div className="pb-[10px]" />
 
       <form
         onSubmit={handleSubmit(onSubmit)}

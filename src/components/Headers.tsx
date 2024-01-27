@@ -12,6 +12,8 @@ export function H1(props: { children: React.ReactNode }) {
   );
 }
 
-export function DetailHeader(props: { children: React.ReactNode }) {
-  return <h3 className="text-xs text-white opacity-70">{props.children}</h3>;
+export function H2(props: { children: React.ReactNode }) {
+  return (
+    <h1 className="text-base font-semibold text-white">{props.children}</h1>
+  );
 }

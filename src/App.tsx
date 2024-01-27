@@ -10,8 +10,8 @@ import {
 import { ErrorElement } from "./components/ErrorElement";
 import "./index.css";
 import { InscriptionDetails } from "./pages/InscriptionDetails";
+import { loader as inscriptionDetailsLoader } from "./pages/InscriptionDetails/loader";
 import { InscriptionSearch } from "./pages/InscriptionSearch";
-import { loader as inscriptionDetailsLoader } from "./pages/inscriptionDetails/loader";
 
 const queryClient = new QueryClient();
 
